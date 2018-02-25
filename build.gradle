@@ -1,0 +1,22 @@
+plugins {
+  id 'java'
+  id 'io.franzbecker.gradle-lombok' version '1.11'
+}
+
+group 'com.proximyst'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+  maven {
+    url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+  }
+  maven { // For VaultAPI
+    url = 'http://nexus.hc.to/content/repositories/pub_releases'
+  }
+}
+
+dependencies {
+  compileOnly 'org.bukkit:bukkit:1.8-R0.1-SNAPSHOT'
+  compileOnly 'net.milkbowl.vault:VaultAPI:+'
+}

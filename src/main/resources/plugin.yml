@@ -1,0 +1,27 @@
+name: SpawnerTax
+author: Proximyst
+version: 1.0-SNAPSHOT
+main: com.proximyst.spawnertax.Main
+description: Remade version of the SpawnerTax plugin sold by GapplePvP1 on MCMarket.
+
+commands:
+  spawnertax-reload:
+    description: Reloads the SpawnerTax config.
+    aliases: [spawner-reload, spawnerreload, reloadspawner, reloadtax, spawnertax]
+
+permissions:
+  spawnertax.*:
+    children:
+      spawnertax.reload: true
+      spawnertax.mine: true
+      spawnertax.free: false
+    default: false
+  spawnertax.reload:
+    default: op
+    description: Required to reload the configuration.
+  spawnertax.mine:
+    default: true
+    description: Required to mine a spawner.
+  spawnertax.free:
+    default: false
+    description: Required to have the plugin be completely disabled for the user.

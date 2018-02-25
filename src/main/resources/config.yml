@@ -1,0 +1,36 @@
+# mine-success-message:
+#     Either list of messages or a single message to send to the user when they mine a spawner successfully.
+#     %amount% is the price in a pure number, no currency involved.
+#     Can be null if no message is wanted. An empty list means no message, and so does an empty message.
+#
+# mine-failure-message:
+#     Either list of messages or a single message to send to the user when they fail to mine a spawner.
+#     %amount% is the price in a pure number, no currency involved.
+#     Can be null if no message is wanted. An empty list means no message, and so does an empty message.
+#
+# taxes:
+#     Dictionary/map of spawner types to set cost of.
+#     The key "_" will define any non-set type. That means, if you set ZOMBIE, but not SHEEP, SHEEP will depend on _.
+#     If _ is not defined, it is automatically set to 0 in code.
+#     All mob types: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+#
+# discount:
+#     WARNING: This is not EULA compliant to sell!
+#     Dictionary/map of discount permissions and their respective amounts in percentage.
+#     No permissions here are automatically assigned, unless your permissions plugin does it.
+#     The permission in use is "spawnertax.discount.<name>". The name is ALWAYS lowercase, and will not care if you write it in uppercase.
+#     Spaces are replaced with underscores (_).
+#     A discount of 0% does nothing, while 100% removes all price. Use a period/dot for decimals.
+
+mine-success-message: "&aYou have successfully mined the spawner. Your account has been deducted $%amount%."
+mine-failure-message: "&cYou have failed to mine the spawner. To mine one costs $%amount%."
+
+taxes:
+  ZOMBIE: 500
+  CREEPER: 1500
+  "_": 1000
+
+discount:
+  staff: 90
+  owner: 100
+  BUILDER: 1.15
